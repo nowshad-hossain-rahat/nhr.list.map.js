@@ -1,4 +1,9 @@
-# nhr.list.map.js
+# nhr.list.map.js-v1.1
+
+Name : nhr.list.map.js
+Version : 1.0
+Type : JavaScript API
+Author : Nowshad Hossain Rahat
 
 Note :
 ------
@@ -18,6 +23,15 @@ to programme more easily
 and also another object in which you can add items as key-value pairs like the EcmaScript-6 "Map".
 The specialty is that where these EcmaScript-6 objects are still a very few supported by browsers,
 this library will be supported by almost all browsers who supports Javascript "Array". 
+
+
+
+# new nhrList(); => add single/multiple item at a time.
+
+# new nhrMap(); => add single/multiple key-value pair at a time.
+
+
+
 
 # Methods for - nhrList();
 --------------------------

@@ -1,5 +1,15 @@
 # nhr.list.map.js
 
+Note :
+------
+
+To add this library to your Web Page just "Copy" and then "Paste" the code below -
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/nowshad-hossain-rahat/nhr.list.map.js@master/nhr.list.map.js"></script>
+
+
+
+
 A simple but powerfull JavaScript Library 
 to have built in add,get,delete and more functionality like EcmaScript-6 "Set" object 
 to programme more easily 
@@ -19,6 +29,7 @@ this library will be supported by almost all browsers who supports Javascript "A
 8.each(func);
 9.size();
 10.indexOf(item);
+11.join(array);
 
 
 # Methods for - nhrMap();
@@ -34,5 +45,6 @@ this library will be supported by almost all browsers who supports Javascript "A
 9.size();
 10.values();
 11.entries();
+12.join(object);
 
 

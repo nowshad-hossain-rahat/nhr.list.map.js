@@ -1,0 +1,2 @@
+# nhr.list.map.js
+A simple but powerfull JavaScript Library to have built in add,get,delete and more functionality like EcmaScript-6 "Set" object to programme more easily and also another object in which you can add items as key-value pairs like the EcmaScript-6 "Map".The specialty is that where these EcmaScript-6 objects are still a very few supported by browsers,this library will be supported by almost all browsers who supports Javascript "Array". 

@@ -5,9 +5,11 @@ Note :
 
 To add this library to your Web Page just "Copy" and then "Paste" the code below -
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/nowshad-hossain-rahat/nhr.list.map.js@master/nhr.list.map.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/nowshad-hossain-rahat/nhr.list.map.js@master/nhr.list.map.js">
+</script>
 
-	-------------------
+
+--------------------------------------------------------------------------
 
 
 A simple but powerfull JavaScript Library 
@@ -46,5 +48,6 @@ this library will be supported by almost all browsers who supports Javascript "A
 10.values();
 11.entries();
 12.join(object);
+13.indexOf(key);
 
 

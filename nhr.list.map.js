@@ -1,160 +1,50 @@
-/*
-	Name        :    nhr.list.map.js
-	Version     :    1.0
-	Author      :    Nowshad Hossain Rahat
-*/
+# nhr.list.map.js
+
+Note :
+------
+
+To add this library to your Web Page just "Copy" and then "Paste" the code below -
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/nowshad-hossain-rahat/nhr.list.map.js@master/nhr.list.map.js"></script>
 
 
 
-/* THE LIST OBJECT */
 
-function nhrList(arr){	
-	let listArray=[];
-	if(typeof(arr)==="object")
-	{
-	  for(let item of arr)
-	  {
-	    if(listArray.indexOf(item)<0){listArray.push(item);}
-	  }
-	}
-	
-	const listProperties={
-	  add:(item)=>
-	  {
-	    if(listArray.indexOf(item)<0)
-	    {
-	      listArray.push(item);
-	    }
-	    return listProperties;
-	  },
-	  addTo:(index,item)=>
-	  {
-	    listArray.splice(index,1,item);
-	    return listProperties;
-	  },
-	  get:(index)=>
-	  {
-	    if(typeof index=="number" && listArray.length>index>(-1)){return listArray[index];}
-	  },
-	  values:()=>{return listArray;},
-	  clear:()=>
-	  {
-	    listArray=[];
-	    return listProperties;
-	  },
-	  delete:(item)=>
-	  {
-	    let i=listArray.indexOf(item);
-	    if(i>(-1)){listArray.splice(i,1);} 
-	    return listProperties;
-	  },
-	  join:(array)=>
-	  {
-	    if(typeof(array)==="object")
-	    {
-	      for(let item of array){listArray.push(item)}
-	    }
-	    return listProperties;
-	  },
-	  has:(item)=>{
-	    if(listArray.indexOf(item)>(-1))
-	    {return true;}else{return false;}
-	  },
-	  each:(fun)=>
-	  {
-	    listArray.forEach((item,index)=>{fun(item,index)});
-	  },
-	  indexOf:(item)=>listArray.indexOf(item),
-	  size:()=>listArray.length
-	}
-	return listProperties;
-}
+A simple but powerfull JavaScript Library 
+to have built in add,get,delete and more functionality like EcmaScript-6 "Set" object 
+to programme more easily 
+and also another object in which you can add items as key-value pairs like the EcmaScript-6 "Map".
+The specialty is that where these EcmaScript-6 objects are still a very few supported by browsers,
+this library will be supported by almost all browsers who supports Javascript "Array". 
+
+# Methods for - nhrList();
+--------------------------
+1.add(item);
+2.addTo(index,item);
+3.delete(item);
+4.get(index);
+5.has(item);
+6.values();
+7.clear();
+8.each(func);
+9.size();
+10.indexOf(item);
+11.join(array);
 
 
-/* THE MAP OBJECT */
+# Methods for - nhrMap();
+--------------------------
+1.set(key);
+2.delete(item);
+3.get(key);
+4.keys();
+5.has(key);
+6.values();
+7.clear();
+8.each(func);
+9.size();
+10.values();
+11.entries();
+12.join(object);
 
 
-function nhrMap(arr){	
-	let listArray=[];
-	if(arr!=undefined)
-	{
-	  for(let item of arr)
-	  {
-	    if(typeof(item)==="object")
-	    {
-	      listArray.push(item);
-	    }
-	  }
-	}
-	
-	const listProperties={
-	  set:(key,val)=>
-	  {
-	    let item=[key,val];
-	    let index=listArray.indexOf(item);
-	    if(index>0)
-	    {
-	      listArray[index]=item;
-	    }
-	    return listProperties;
-	  },
-	  get:(key)=>
-	  {
-	    let values=[];
-	    listArray.forEach((it,i)=>{
-	      if(it.indexOf(key)==0)
-	      {
-	        values.push(it[1]);
-	      }
-	    });
-	    return values;
-	  },
-	  delete:(key)=>
-	  {
-	    for(let it of listArray)
-	    {
-	      if(it[0]===key)
-	      {
-	        listArray.splice(listArray.indexOf(it),1);
-	      }
-	    }
-	    return listProperties;
-	  },
-	  keys:()=>
-	  {
-	    let keys=[];
-	    listArray.forEach((it,i)=>{
-	      keys.push(it[0]);
-	    });
-	    return keys;
-	  },
-	  values:()=>
-	  {
-	    let vals=[];
-	    listArray.forEach((it,i)=>{
-	      vals.push(it[1]);
-	    });
-	    return vals;
-	  },
-	  has:(item)=>
-	  {
-	    let bools=[];
-	    for(let it of listArray)
-	    {
-	      if(it.indexOf(item)>(-1)){bools.push(true);}
-	    }
-	    if(bools.length<1)
-	    {return false;}
-	    else{return true;}
-	  },
-	  each:(fun)=>
-	  {
-	    listArray.forEach((item,index)=>{fun(item,index);});
-	    return listProperties;
-	  },
-	  clear:()=>{listArray=[];return listProperties;},
-	  entries:()=>listArray,
-	  size:()=>listArray.length
-	}
-	return listProperties;
-}

@@ -36,7 +36,6 @@ new nhrMap(); => add single/multiple key-value pair at a time.
 
 
 
-```javascript
 # Methods for - nhrList();
 --------------------------
 1.add(item);

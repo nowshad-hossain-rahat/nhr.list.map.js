@@ -1,7 +1,7 @@
-# nhr.list.map.js-v1.0
+# list-map.js-v1.0
 
 ```javascript
-Name : nhr.list.map.js
+Name : list-map.js
 Version : 1.0
 Type : JavaScript API
 Author : Nowshad Hossain Rahat
@@ -12,7 +12,7 @@ Note :
 
 To add this library to your Web Page just "Copy" and then "Paste" the code below -
 ```javascript
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/nowshad-hossain-rahat/nhr.list.map.js@master/nhr.list.map.js">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/nowshad-hossain-rahat/nhr.list.map.js@master/list-map.js">
 </script>
 ```
 
@@ -29,14 +29,14 @@ this library will be supported by almost all browsers who supports Javascript "A
 
 
 ```javascript
-new nhrList(); => add single/multiple item at a time.
+new List(); => add single/multiple item at a time.
 
-new nhrMap(); => add single/multiple key-value pair at a time.
-
-
+new HashMap(); => add single/multiple key-value pair at a time.
 
 
-# Methods for - nhrList();
+
+
+# Methods for - List();
 --------------------------
 1.add(item);
 2.addTo(index,item);
@@ -51,7 +51,7 @@ new nhrMap(); => add single/multiple key-value pair at a time.
 11.join(array);
 
 
-# Methods for - nhrMap();
+# Methods for - HashMap();
 --------------------------
 1.set(key);
 2.delete(item);

@@ -12,7 +12,7 @@ Author : Nowshad Hossain Rahat
 
 function List(arr){	
 	let listArray=[];
-	if(typeof arr==="object")
+	if(arr)
 	{
 	  for(let item of arr)
 	  {
@@ -20,38 +20,36 @@ function List(arr){
 	  }
 	}
 	
-	const listProperties={
-	  add:(item)=>
-	  {
-	    if(listArray.indexOf(item)<0)
-	    {
+	let listProperties={
+	  add:(item)=>{
+	    if(listArray.indexOf(item)<0){
 	      listArray.push(item);
 	    }
-	    return listProperties;
+	    return nhr.extend(listProperties);
 	  },
 	  addTo:(index,item)=>
 	  {
 	    listArray.splice(index,1,item);
-	    return listProperties;
+	    return nhr.extend(listProperties);
 	  },
 	  get:(index)=>
 	  {
-	    if(typeof index==="number" && listArray.length>index>(-1)){return listArray[index];}
+	    if(typeof index==='number' && listArray.length>index>(-1)){return listArray[index];}
 	  },
 	  values:()=>{return listArray;},
 	  clear:()=>
 	  {
-	    listArray=[];
-	    return listProperties;
+	    while(listArray.length>0){listArray.pop()}
+	    return nhr.extend(listProperties);
 	  },
 	  join:(array)=>
 	  {
 	    if(typeof array==="object")
 	    {
 	      for(let item of array)
-	      {listProperties.add(item)}
+	      {nhr.extend(listProperties).add(item)}
 	    }
-	    return listProperties;
+	    return nhr.extend(listProperties);
 	  },
 	  has:(item)=>{
 	    if(listArray.indexOf(item)>(-1))
@@ -66,11 +64,23 @@ function List(arr){
 	  delete:(item)=>
 	  {
 	    let i=listArray.indexOf(item);
-	    if(listProperties.has(item)){listArray.splice(i,1);};
-	    return listProperties;
-	  }
+	    if(nhr.extend(listProperties).has(item)){listArray.splice(i,1);};
+	    return nhr.extend(listProperties);
+	  },
+	  replace:(item1,item2)=>
+	  {
+	 	if(nhr.extend(listProperties).has(item1)){
+	 		let index = listArray.indexOf(item1);
+	 		listArray.splice(index,1,item2);
+	 	}
+	 	return nhr.extend(listProperties);
+	  },
+	  
+	  pop:()=>{listArray.pop();return nhr.extend(listProperties); }
+	  
 	}
-	return listProperties;
+		
+	return nhr.extend(listProperties);
 }
 
 
@@ -90,7 +100,7 @@ function HashMap(arr){
 	  }
 	}
 	
-	const listProperties={	  
+	let listProperties={	  
 	  indexOf:(key)=>
 	  {
 	    let values=[];
@@ -122,7 +132,7 @@ function HashMap(arr){
 	        listArray.splice(listArray.indexOf(it),1);
 	      }
 	    }
-	    return listProperties;
+	    return nhr.extend(listProperties);
 	  },
 	  keys:()=>
 	  {
@@ -153,16 +163,16 @@ function HashMap(arr){
 	  },
 	  set:(key,val)=>
 	  {
-	    if(listProperties.has(key))
+	    if(nhr.extend(listProperties).has(key))
 	    {
-	      let i=listProperties.indexOf(key);
+	      let i=nhr.extend(listProperties).indexOf(key);
 	      listArray[i]=[key,val];
 	    }
 	    else
 	    {
 	      listArray.push([key,val]);
 	    }
-	    return listProperties;
+	    return nhr.extend(listProperties);
 	  },
 	  each:(fun)=>
 	  {
@@ -172,21 +182,27 @@ function HashMap(arr){
 	      let v=item[1];
 	      fun(k,v,i);
 	    });
-	    return listProperties;
+	    return nhr.extend(listProperties);
 	  },
 	  join:(obj)=>
 	  {
 	    for(let k in obj)
 	    {
-	      listProperties.set(k,obj[k]);
+	      nhr.extend(listProperties).set(k,obj[k]);
 	    }
-	    return listProperties;
+	    return nhr.extend(listProperties);
 	  },
-	  clear:()=>{listArray=[];return listProperties;},
+	  clear:()=>{while(listArray.length>0){listArray.pop()}return nhr.extend(listProperties);},
 	  entries:()=>listArray,
-	  size:()=>listArray.length
+	  size:()=>listArray.length,
+	  toObject:(noLength)=>{	  	
+	  	let newObj = {};
+	  	for(let entry of listArray){ newObj[entry[0]]=entry[1]; }
+	  	return newObj;	  	
+	  }
 	}
-	return listProperties;
+		
+	return nhr.extend(listProperties);
 }
 
 
